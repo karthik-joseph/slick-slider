@@ -65,21 +65,19 @@ const HeeadingH1 = styled.h1`
     margin-bottom:12px;
 `;
 const ListItem = styled.div`
-    width:40%;
-    margin-bottom:20px;
     display:flex;
-    align-items:center;
-    align-content:center;
-`;
-const Nav = styled(NavLink)`
+    justify-content:space-between;  
 
 `;
+const Nav = styled(NavLink)`
+    
+`;
 const Img = styled.img`
-    margin-left:20%;
+    
 `;
 const HeadingH6 = styled.h6`
     font-size:17px;
-    margin-bottom:12px;
+    margin: 12px 0;
 `;
 const Para = styled.p`
     color:red;
