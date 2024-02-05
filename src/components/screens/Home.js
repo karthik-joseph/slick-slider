@@ -10,12 +10,12 @@ export default function Home() {
         dots: true,
         infinite: true,
         speed: 800,
-        slidesToShow: 3,
-        slidesToScroll: 2,
+        slidesToShow: 2,
+        slidesToScroll: 1,
         arrows: true,
         autoplay:true,
-        autoplaySpeed:2000,
-        draggable:true
+        autoplaySpeed:1000,
+        draggable:true,
       };
 
     const [users,setUsers] = useState([]);
@@ -34,7 +34,7 @@ export default function Home() {
         return users.map((user)=>(
             <ListItem>
                 <Nav to={`/user/${user.id}`}>
-                    <img src={user.avatar} alt={user.first_name} />
+                    <Img src={user.avatar} alt={user.first_name} />
                 </Nav>
                 <HeadingH6>
                     {user.first_name} {user.last_name}
@@ -48,7 +48,7 @@ export default function Home() {
         <HeeadingH1>Users</HeeadingH1>
         <div className='container'>
             <Slider ref={SliderRef} {...settings} className='List'>
-            {renderUsers()}
+                {renderUsers()}
             </Slider>
             <div style={{textAlign:"center",marginTop:"40px"}}>
                 <button className='button' onClick={()=>SliderRef.current.slickPrev()}>previous</button>
@@ -62,14 +62,25 @@ export default function Home() {
 const HeeadingH1 = styled.h1`
     text-align:center;
     margin-top:20px;
+    margin-bottom:12px;
 `;
 const ListItem = styled.div`
-    width:30%;
-    margin-bottom:40px;
+    width:40%;
+    margin-bottom:20px;
+    display:flex;
+    align-items:center;
+    align-content:center;
 `;
-const Nav = styled(NavLink)``;
+const Nav = styled(NavLink)`
+
+`;
+const Img = styled.img`
+    margin-left:20%;
+`;
 const HeadingH6 = styled.h6`
     font-size:17px;
     margin-bottom:12px;
 `;
-const Para = styled.p``;
+const Para = styled.p`
+    color:red;
+`;
